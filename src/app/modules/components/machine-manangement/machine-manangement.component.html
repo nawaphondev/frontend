@@ -1,0 +1,46 @@
+<div class="min-h-screen flex flex-col bg-[hsl(var(--background))] text-[hsl(var(--foreground))]">
+    <!-- Header -->
+    <header class="flex items-center justify-between bg-[hsl(var(--primary))] px-6 py-4 text-white">
+      <h1 class="text-lg font-semibold">Machine Management</h1>
+      <button
+        class="rounded bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-600"
+        (click)="openAddMachineModal()">
+        + Add Machine
+      </button>
+    </header>
+  
+    <!-- Main Content -->
+    <main class="flex-1 overflow-y-auto bg-[hsl(var(--background))] p-6">
+      <!-- Machine List -->
+      <section>
+        <table class="w-full border-collapse rounded-lg shadow-sm">
+          <thead class="bg-[hsl(var(--card))] text-left text-sm font-medium text-[hsl(var(--card-foreground))]">
+            <tr>
+              <th class="px-4 py-2">Machine ID</th>
+              <th class="px-4 py-2">Name</th>
+              <th class="px-4 py-2">Status</th>
+              <th class="px-4 py-2">Actions</th>
+            </tr>
+          </thead>
+          <tbody class="text-sm text-[hsl(var(--foreground))]">
+            <tr *ngFor="let machine of machines" class="border-t hover:bg-[hsl(var(--muted))]">
+              <td class="px-4 py-2">{{ machine.id }}</td>
+              <td class="px-4 py-2">{{ machine.name }}</td>
+              <td class="px-4 py-2">{{ machine.status }}</td>
+              <td class="px-4 py-2">
+                <div class="flex space-x-2">
+                  <button class="rounded bg-blue-500 px-3 py-1 text-sm font-medium text-white hover:bg-blue-600">
+                    Edit
+                  </button>
+                  <button class="rounded bg-red-500 px-3 py-1 text-sm font-medium text-white hover:bg-red-600">
+                    Delete
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+  

@@ -1,0 +1,32 @@
+/* Styles specific to the Machine Management component */
+header {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  table {
+    width: 100%;
+    border-spacing: 0;
+    th,
+    td {
+      padding: 1rem;
+      text-align: left;
+    }
+  
+    th {
+      background-color: hsl(var(--card));
+      color: hsl(var(--card-foreground));
+    }
+  
+    tr {
+      border-top: 1px solid hsl(var(--border));
+    }
+  
+    tr:hover {
+      background-color: hsl(var(--muted));
+    }
+  }
+  
+  button {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  

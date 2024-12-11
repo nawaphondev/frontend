@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  :root {
+    --theme-background-light: 142 50% 98%;
+    --theme-foreground-light: 142 30% 20%;
+    --theme-card-light: 142 50% 95%;
+    --theme-card-foreground-light: 142 30% 15%;
+    --theme-primary-light: 142.1 76.2% 36.3%;
+    --theme-primary-foreground-light: 0 0% 100%;
+    --theme-muted-light: 142 30% 90%;
+    --theme-muted-foreground-light: 142 20% 40%;
+    --theme-destructive-light: 350 100% 40%;
+    --theme-destructive-foreground-light: 0 0% 98%;
+    --theme-border-light: 142 30% 85%;
+
+    --theme-background-dark: 142 30% 10%;
+    --theme-foreground-dark: 142 20% 90%;
+    --theme-card-dark: 142 30% 15%;
+    --theme-card-foreground-dark: 142 20% 80%;
+    --theme-primary-dark: 142.1 70.6% 45.3%;
+    --theme-primary-foreground-dark: 144.9 80.4% 10%;
+    --theme-muted-dark: 142 30% 20%;
+    --theme-muted-foreground-dark: 142 20% 60%;
+    --theme-destructive-dark: 350 100% 40%;
+    --theme-destructive-foreground-dark: 0 0% 98%;
+    --theme-border-dark: 142 30% 25%;
+
+    /* Set default theme colors here for easy customization */
+    --background: var(--theme-background-light);
+    --foreground: var(--theme-foreground-light);
+    --card: var(--theme-card-light);
+    --card-foreground: var(--theme-card-foreground-light);
+    --primary: var(--theme-primary-light);
+    --primary-foreground: var(--theme-primary-foreground-light);
+    --muted: var(--theme-muted-light);
+    --muted-foreground: var(--theme-muted-foreground-light);
+    --destructive: var(--theme-destructive-light);
+    --destructive-foreground: var(--theme-destructive-foreground-light);
+    --border: var(--theme-border-light);
+  }
+
+  .dark {
+    --background: var(--theme-background-dark);
+    --foreground: var(--theme-foreground-dark);
+    --card: var(--theme-card-dark);
+    --card-foreground: var(--theme-card-foreground-dark);
+    --primary: var(--theme-primary-dark);
+    --primary-foreground: var(--theme-primary-foreground-dark);
+    --muted: var(--theme-muted-dark);
+    --muted-foreground: var(--theme-muted-foreground-dark);
+    --destructive: var(--theme-destructive-dark);
+    --destructive-foreground: var(--theme-destructive-foreground-dark);
+    --border: var(--theme-border-dark);
+  }
+
+  [type='text'],
+  [type='email'],
+  [type='url'],
+  [type='password'],
+  [type='number'],
+  [type='date'],
+  [type='datetime-local'],
+  [type='month'],
+  [type='search'],
+  [type='tel'],
+  [type='time'],
+  [type='week'],
+  [multiple],
+  textarea,
+  select {
+    @apply w-full rounded-md border border-border bg-background px-3 py-3 text-xs text-foreground placeholder-muted-foreground focus:z-10 focus:border-primary focus:outline-none focus:ring-primary;
+  }
+
+  [type='checkbox'],
+  [type='radio'] {
+    @apply h-4 w-4 rounded border-border bg-background text-primary focus:ring-2 focus:ring-primary;
+  }
+}
+
+@layer components {
+  .dropdown-content {
+    @apply pointer-events-none scale-95 opacity-0 duration-100 ease-in;
+  }
+
+  .dropdown:hover > .dropdown-content {
+    @apply pointer-events-auto block scale-100 animate-fade-in-up opacity-100 duration-200;
+  }
+}
+
+/** Scroll bar **/
+@supports selector(::-webkit-scrollbar) {
+  .supports-scrollbars\: pr-2 {
+    padding-right: 0.5rem;
+  }
+}
+
+/** Plugins **/
+@import './assets/styles/apexchart.scss';
